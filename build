@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# build src/index.js -> dist/index.js (readable) + dist/index.min.js (minified).
+# Plain JS source; nothing leaks to global scope beyond window.Scrolly (defined via an IIFE).
+set -e
+rm -rf dist
+mkdir -p dist
+echo "copy src/index.js -> dist/index.js ..."
+cp src/index.js dist/index.js
+echo "minifying -> dist/index.min.js ..."
+./node_modules/.bin/uglifyjs dist/index.js -m -c > dist/index.min.js
+echo "done."
