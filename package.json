@@ -9,16 +9,25 @@
   ],
   "description": "A tiny scrollytelling engine + optional d3 chart helpers",
   "version": "0.1.0",
-  "homepage": "https://github.com/plotdb/scrolly.js",
+  "homepage": "https://github.com/plotdb/scrolly",
   "repository": {
     "type": "git",
-    "url": "https://github.com/plotdb/scrolly.js"
+    "url": "https://github.com/plotdb/scrolly"
   },
   "scripts": {
     "start": "npx server -r web -o true",
     "build": "./build"
   },
   "devDependencies": {
+    "@zbryikt/template": "^2.4.2",
+    "d3": "^7.9.0",
+    "fedep": "^1.7.6",
     "uglify-js": "^3.13.1"
+  },
+  "frontendDependencies": {
+    "root": "web/static/assets/lib",
+    "modules": [
+      {"name": "d3", "dir": "dist"}
+    ]
   }
 }
